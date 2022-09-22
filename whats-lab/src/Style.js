@@ -2,11 +2,18 @@ import styled from "styled-components";
 export const Header=styled.header`
     height: 5vh;
     background-color: #4eb34e8f;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     span{
-        display: flex;
-        justify-content: flex-end;
         font-weight: bold;
-        margin-right: 50px;
+        margin-right: 30px;
+        font-size: 30px;
+        color:green;
+    }
+    p{
+        font-weight: bold;
+        margin-right: 10px;
         font-size: 30px;
         color:green;
     }
@@ -28,6 +35,9 @@ export const Conversa=styled.div`
     margin-top: 20px;
     padding-bottom: 10px;
 
+    @media (min-width: 200px) and (max-width:920px){
+        width: 70vw;
+    }
 `
 
 export const Div=styled.div`
@@ -94,6 +104,9 @@ export const Botoes=styled.div`
     width: 35vw;
     display: flex;
     cursor: pointer;
+    @media (min-width: 200px) and (max-width:920px){
+        width: 70vw;
+    }
 `
 export const Input=styled.input`
     width: 10vw;
@@ -106,6 +119,10 @@ export const Input=styled.input`
     }
     :active{
         border: 2px solid green;
+    }
+
+    @media (min-width: 200px) and (max-width:920px){
+        width: 30vw;
     }
 `
 export const InputMensagem=styled.input`
@@ -120,17 +137,26 @@ export const InputMensagem=styled.input`
     :active{
         border: 2px solid green;
     }
-
-
+    @media (min-width: 200px) and (max-width:920px){
+        width: 35vw;
+    }
 `
 export const Button=styled.button`
     width: 5vw;
     height: 25px;
     margin-top: 5px;
     border: 2px solid #4eb34e8f;
+    cursor: pointer;
     :hover{
         background-color: #4eb34e8f;
         color: white;
+    }
+
+    @media (min-width: 200px) and (max-width:920px){
+        width: 25vw;
+        font-size: 15px;
+        color: green;
+        font-weight: 600;
     }
 
 
