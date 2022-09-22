@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Botoes, Button, Conversa, Div, DivEu, DivRemetente, Header, Input, InputMensagem, Main, Mensagens, MensagensRemetente, Remetente, Texto, TextoEu } from './Style';
+import {BsFillChatDotsFill} from 'react-icons/bs'
 
 function App() {
     const [inputRemetente, setInputRemetente] = useState("")
     const [inputMensagem, setInputMensagem]= useState("")
-    const [conversas, setConversas]=useState([
-    ])
+    const [conversas, setConversas]=useState([])
 
     const handleInputRemetente = (evento)=>{
       setInputRemetente(evento.target.value)
@@ -35,11 +35,11 @@ function App() {
         setConversas(novaMensagemEnviada)
       }
 
-      if(elemento.remetente=== "eu" || elemento.remetente === "Eu"){
+      if(elemento.remetente=== "eu" || elemento.remetente === "Eu" ){
         return(
           <DivEu>
             <Mensagens key={index} onDoubleClick={deletarMensagem}>
-            <TextoEu>{elemento.mensagem}</TextoEu>
+              <TextoEu>{elemento.mensagem}</TextoEu>
             </Mensagens>
           </DivEu>
         )}
@@ -59,7 +59,8 @@ function App() {
   return (
     <>
       <Header>
-        <span>WhatsLab</span>
+        <p> <BsFillChatDotsFill/> </p>
+        <span> WhatsLab</span>
       </Header>
       <Main>
         <Conversa>
@@ -68,16 +69,17 @@ function App() {
           </Div>
         </Conversa> 
         <Botoes>
-            <Input placeholder='Remetente'
-            value={inputRemetente}
-            onChange={handleInputRemetente}
+            <Input 
+              placeholder='Remetente'
+              value={inputRemetente}
+              onChange={handleInputRemetente}
             />
-            <InputMensagem placeholder='Mensagem'
-            value={inputMensagem}
-            onChange={handleInputMensagem}
+            <InputMensagem 
+              placeholder='Mensagem'
+              value={inputMensagem}
+              onChange={handleInputMensagem}
             />
-
-          <Button onClick={adicionarMensagem}>Enviar</Button>
+            <Button onClick={adicionarMensagem}>Enviar</Button>
         </Botoes>
       </Main>
     </>
